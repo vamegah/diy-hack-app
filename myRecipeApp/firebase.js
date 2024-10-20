@@ -7,12 +7,12 @@ import { getStorage } from 'firebase/storage';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyByvHyTPvwSD5iI9gFMeKk89eCoL3P__Ss",
-  authDomain: "reactnative-push-notific-e871b.firebaseapp.com",
-  projectId: "reactnative-push-notific-e871b",
-  storageBucket: "reactnative-push-notific-e871b.appspot.com",
-  messagingSenderId: "98427882719",
-  appId: "1:98427882719:web:8a17a006cb531468eaed6a"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
 };
 
 // Initialize Firebase
