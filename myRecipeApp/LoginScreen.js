@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Pressable, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { setPersistence, browserSessionPersistence, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/native';
 import { auth } from './firebase';
 
@@ -9,15 +9,13 @@ const LoginScreen = () => {
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
 
-  const handleLogin = () => {
-    setPersistence(auth, browserSessionPersistence)
-    .then(() => {
-      signInWithEmailAndPassword(auth, email, password);
-    })
-    .catch((error) => {
+  const handleLogin = async () => {
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+    } catch(error) {
       const errorMessage = error.message;
       console.log(errorMessage);
-    });
+    };
   };
 
   return (
