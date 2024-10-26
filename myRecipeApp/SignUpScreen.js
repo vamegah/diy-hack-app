@@ -10,26 +10,19 @@ const SignUpScreen = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigation = useNavigation();
 
-  const handleSignUp = () => {
+  const handleSignUp = async () => {
     if (email && password && confirmPassword && password !== confirmPassword) {
       alert("Please provide all required details for SignUp");
       return;
     }
     try {
-      setPersistence(auth, browserSessionPersistence)
-      .then(() => {
-        createUserWithEmailAndPassword(auth, email, password);
-      }).then(() => {
-        alert("User registered successfully!");
-        navigation.navigate('Home'); // Navigate to the home screen after signup
-      })
-      .catch((error) => {
+        console.log(auth);
+        await createUserWithEmailAndPassword(auth, email, password);
+      } catch(error) {
         const errorMessage = error.message;
+        alert("Unable to create user. Please check the details");
         console.log(errorMessage);
-      });
-    } catch (error) {
-      alert(error.message);
-    }
+      };
   };
 
   return (
