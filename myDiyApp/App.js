@@ -21,21 +21,8 @@ export default function App() {
 
   const {user} = useAuthentication();
 
-  const handleLogout = async ()=>{
-    await signOut(auth);
-  }
-
-  const logoutButton = ()=> (
-    <Pressable
-      style={{margin:3}} 
-      onPress={() => {
-        handleLogout();
-        console.log('User logged out');
-      }} 
-    >
-      <Ionicons name="log-out-outline" size={24} color="grey" />
-      </Pressable>
-  )
+  //Add a function to return logout button
+  
   if (user){
     return (
       <NavigationContainer>
