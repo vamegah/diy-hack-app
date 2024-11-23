@@ -25,6 +25,15 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     borderRadius: 5,
   },
+  urlinput: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 10,
+    marginBottom: 15,
+    marginLeft: 20,
+    marginTop: 15,
+    borderRadius: 5,
+  },  
   image: {
     width: 200,
     margin: 10,
