@@ -16,7 +16,7 @@ const DiyHackDetailScreen = ({ route }) => {
   return (
     <View style={{ padding: 20}}>
 
-    //Add the code to display the DIY hack detail
+  {/* Add the code to display the DIY hack detail*/}
   
     </View>
   );
