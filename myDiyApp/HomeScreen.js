@@ -10,6 +10,28 @@ const HomeScreen = ({ navigation }) => {
   const [isPressed, setIsPressed] = useState(false);
 
 //Add code to fetch the DIY hacks and set the states
+  const fetchDiyHacks = async () => {
+    try {
+      const diyHacksCollection = collection(db, "diyHacks");
+      const diyHackSnapshot = await getDocs(diyHacksCollection);
+      const diyHackList = diyHackSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setDiyHacks(diyHackList);
+    } catch(error){
+      console.error(error);
+      console.log("Unable to fetch DIY Hacks")
+    }
+  };
+
+  useEffect(() => {
+    fetchDiyHacks();
+  }, []);
+
+  // Use useFocusEffect to fetch data when the screen is focused
+  useFocusEffect(
+    React.useCallback(() => {
+      fetchDiyHacks();
+    }, [])
+  );
   
   const addDIYHack = async ()=>{
     navigation.navigate('AddDiyHack')

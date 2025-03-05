@@ -9,12 +9,13 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: "AIzaSyCemUlU1QxwZdv1YhUXq2Yf_rt_ihGpqkY",
+  authDomain: "flutter--analytics-app.firebaseapp.com",
+  projectId: "flutter--analytics-app",
+  storageBucket: "flutter--analytics-app.firebasestorage.app",
+  messagingSenderId: "704528738332",
+  appId: "1:704528738332:web:e0689ac06419b4e39d97d9",
+  measurementId: "G-YWLL4CH6QW"
 };
 
 // Initialize Firebase
